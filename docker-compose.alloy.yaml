@@ -1,10 +1,24 @@
 services:
+  api:
+    image: node:22-bookworm
+    working_dir: /workspace
+    network_mode: host
+    environment:
+      IS_ALLOY: ${IS_ALLOY:-false}
+      API_PORT: 8787
+    volumes:
+      - .:/workspace
+    command: bash -lc "node server/index.js"
+
   web:
     image: node:22-bookworm
     working_dir: /workspace
     network_mode: host
     environment:
       IS_ALLOY: ${IS_ALLOY:-false}
+      API_TARGET: http://127.0.0.1:8787
     volumes:
       - .:/workspace
+    depends_on:
+      - api
     command: bash -lc "npm install && npm run dev"

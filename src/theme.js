@@ -1,0 +1,16 @@
+export const theme = {
+  bg: '#0b0f17',
+  bgSoft: '#0f1521',
+  surface: '#131a26',
+  surfaceAlt: '#182130',
+  border: '#25304180',
+  borderSoft: '#212b3a',
+  text: '#eef2f8',
+  textMuted: '#9aa7bd',
+  textFaint: '#5f6d84',
+  accent: '#4f8cff',
+  accentSoft: '#1c2a45',
+  up: '#2fbf71',
+  down: '#f2545b',
+  warn: '#e0a33e',
+}
